@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
 import {
   HeaderButtons,
@@ -13,6 +14,7 @@ const SimpleHeaderButton = ({
   IconComponent = Ionicons,
   iconSize = 24,
   iconColor = "rgb(0, 122, 255)",
+  hybrid = false,
 }) => {
   return (
     <HeaderButtons
@@ -25,9 +27,29 @@ const SimpleHeaderButton = ({
         />
       )}
     >
-      <Item title={title} iconName={iconName} onPress={onPress} />
+      <Item
+        title={title}
+        iconName={
+          IconComponent === Ionicons && hybrid
+            ? Platform.OS === "ios"
+              ? `ios-${iconName}`
+              : `md-${iconName}`
+            : iconName
+        }
+        onPress={onPress}
+      />
     </HeaderButtons>
   );
+};
+
+SimpleHeaderButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  iconName: PropTypes.string,
+  onPress: PropTypes.func,
+  IconComponent: PropTypes.node,
+  iconSize: PropTypes.number,
+  iconColor: PropTypes.string,
+  hybrid: PropTypes.bool,
 };
 
 export default SimpleHeaderButton;

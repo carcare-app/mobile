@@ -4,31 +4,34 @@ import {
   HamburgerHeaderButton,
   SimpleHeaderButton,
 } from "../../components/nav";
-import { CARS_SCREEN } from "../../const/navNames";
-import { CarsScreen } from "../../screens";
+import { PROFILE_SCREEN } from "../../const/navNames";
+import { ProfileScreen } from "../../screens";
 
 const Stack = createStackNavigator();
 
-const CarsStack = () => (
+const ProfileStack = () => (
   <Stack.Navigator
     screenOptions={({ navigation }) => ({
       headerLeft: () => <HamburgerHeaderButton navigation={navigation} />,
       headerRight: () => (
         <SimpleHeaderButton
-          title="New Car"
-          iconName="add-circle"
+          title="Sign Out"
+          iconName="log-out"
           hybrid
-          onPress={() => console.log("NEW CAR")}
+          iconColor="#eb5a46"
+          onPress={() => console.log("SIGN OUT")}
         />
       ),
     })}
   >
     <Stack.Screen
-      name={CARS_SCREEN}
-      component={CarsScreen}
-      options={{ title: "Cars" }}
+      name={PROFILE_SCREEN}
+      component={ProfileScreen}
+      options={{
+        title: "Profile",
+      }}
     />
   </Stack.Navigator>
 );
 
-export default CarsStack;
+export default ProfileStack;

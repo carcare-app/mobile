@@ -1,6 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { SimpleHeaderButton } from "../../components";
+import { HamburgerHeaderButton } from "../../components/nav";
 import { GAS_STATIONS_SCREEN } from "../../const/navNames";
 import { GasStationsScreen } from "../../screens";
 
@@ -9,13 +9,7 @@ const Stack = createStackNavigator();
 const GasStationsStack = () => (
   <Stack.Navigator
     screenOptions={({ navigation }) => ({
-      headerLeft: () => (
-        <SimpleHeaderButton
-          title="Menu"
-          iconName="ios-menu"
-          onPress={navigation.openDrawer}
-        />
-      ),
+      headerLeft: () => <HamburgerHeaderButton navigation={navigation} />,
     })}
   >
     <Stack.Screen
