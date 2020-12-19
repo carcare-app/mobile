@@ -1,0 +1,9 @@
+// Screens
+export const DASHBOARD_SCREEN = "DASHBOARD_SCREEN";
+export const CARS_SCREEN = "CARS_SCREEN";
+export const GAS_STATIONS_SCREEN = "GAS_STATIONS_SCREEN";
+
+// Stacks
+export const DASHBOARD_STACK = "DASHBOARD_STACK";
+export const CARS_STACK = "CARS_STACK";
+export const GAS_STATIONS_STACK = "GAS_STATIONS_STACK";
