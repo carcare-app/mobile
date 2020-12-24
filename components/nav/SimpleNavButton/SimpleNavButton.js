@@ -7,7 +7,7 @@ import {
   Item,
 } from "react-navigation-header-buttons";
 
-const SimpleHeaderButton = ({
+const SimpleNavButton = ({
   title,
   iconName,
   onPress,
@@ -16,6 +16,11 @@ const SimpleHeaderButton = ({
   iconColor = "rgb(0, 122, 255)",
   hybrid = false,
 }) => {
+  if (iconName.startsWith("-")) {
+    hybrid = true;
+    iconName = iconName.slice(1);
+  }
+
   return (
     <HeaderButtons
       HeaderButtonComponent={(props) => (
@@ -42,7 +47,7 @@ const SimpleHeaderButton = ({
   );
 };
 
-SimpleHeaderButton.propTypes = {
+SimpleNavButton.propTypes = {
   title: PropTypes.string.isRequired,
   iconName: PropTypes.string,
   onPress: PropTypes.func,
@@ -52,4 +57,4 @@ SimpleHeaderButton.propTypes = {
   hybrid: PropTypes.bool,
 };
 
-export default SimpleHeaderButton;
+export default SimpleNavButton;

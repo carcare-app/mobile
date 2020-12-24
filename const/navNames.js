@@ -1,10 +1,14 @@
-// Screens
+// SCREENS
+// -- Auth
+export const AUTH_SIGN_IN_SCREEN = "AUTH_SIGN_IN_SCREEN";
+export const AUTH_SIGN_UP_SCREEN = "AUTH_SIGN_UP_SCREEN";
+// -- App
 export const DASHBOARD_SCREEN = "DASHBOARD_SCREEN";
 export const CARS_SCREEN = "CARS_SCREEN";
 export const GAS_STATIONS_SCREEN = "GAS_STATIONS_SCREEN";
 export const PROFILE_SCREEN = "PROFILE_SCREEN";
 
-// Stacks
+// STACKS
 export const DASHBOARD_STACK = "DASHBOARD_STACK";
 export const CARS_STACK = "CARS_STACK";
 export const GAS_STATIONS_STACK = "GAS_STATIONS_STACK";

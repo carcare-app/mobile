@@ -1,9 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import {
-  HamburgerHeaderButton,
-  SimpleHeaderButton,
-} from "../../components/nav";
+import { HamburgerHeaderButton, SimpleNavButton } from "../../components/Nav";
 import { CARS_SCREEN } from "../../const/navNames";
 import { CarsScreen } from "../../screens";
 
@@ -14,7 +11,7 @@ const CarsStack = () => (
     screenOptions={({ navigation }) => ({
       headerLeft: () => <HamburgerHeaderButton navigation={navigation} />,
       headerRight: () => (
-        <SimpleHeaderButton
+        <SimpleNavButton
           title="New Car"
           iconName="add-circle"
           hybrid

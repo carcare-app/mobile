@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Platform } from "react-native";
-import { DrawerItemIcon } from "../../components/nav";
+import { DrawerItemIcon } from "../../components/Nav";
 import {
   DASHBOARD_STACK,
   CARS_STACK,
@@ -13,7 +13,7 @@ import {
   CarsStack,
   GasStationsStack,
   ProfileStack,
-} from "../stacks";
+} from "../AppStacks";
 
 const Drawer = createDrawerNavigator();
 

@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SimpleHeaderButton from "../SimpleHeaderButton/SimpleHeaderButton";
+import SimpleNavButton from "../SimpleNavButton/SimpleNavButton";
 
 const HamburgerHeaderButton = ({ navigation }) => (
-  <SimpleHeaderButton
+  <SimpleNavButton
     title="Menu"
     iconName="menu"
     hybrid

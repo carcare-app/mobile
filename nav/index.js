@@ -1,12 +1,17 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { useSelector } from "react-redux";
+import AppDrawer from "./AppDrawer/AppDrawer";
+import AuthBottomTab from "./AuthBottomTab/AuthBottomTab";
 
-import AppDrawer from "./drawer";
+const AppNavigator = () => {
+  const user = useSelector((state) => !!state.user);
 
-const AppNavigator = () => (
-  <NavigationContainer>
-    <AppDrawer />
-  </NavigationContainer>
-);
+  return (
+    <NavigationContainer>
+      {user ? <AppDrawer /> : <AuthBottomTab />}
+    </NavigationContainer>
+  );
+};
 
 export default AppNavigator;
